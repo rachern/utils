@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>login</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <style type="text/css">
+    *{
+      margin:0;
+      padding:0;
+    }
+    html,body{
+      padding: 100px;
+      background-color: #eee;
+    }
+    .form-login{
+      width: 500px;
+      height: auto;
+      padding: 20px;
+      border: 1px solid #bbb;
+      background-color: #fff;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+<form class="form-horizontal form-login">
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="inputEmail3" placeholder="Email"
+             data-bv="true"
+             data-bv-require="true"
+             data-bv-require-error="* 邮箱为必填项"
+             data-bv-email="true"
+             data-bv-email-error="* 不合法的邮箱">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputPassword3" placeholder="Password"
+             data-bv="true"
+             data-bv-require="true"
+             data-bv-require-error="* 密码为必填项"
+             data-bv-regex="^\w{6,12}$"
+             data-bv-regex-error="* 密码必须由字母数字下划线所组成的6-12位的序列">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">Sign in</button>
+    </div>
+  </div>
+</form>
+
+  <script type="text/javascript" src="js/jquery-2.2.4.js"></script>
+  <script type="text/javascript" src="js/validator.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      //不要强迫你的用户，由用户体验，让用户选择
+      $("form").validator({
+        raise : "keyup"
+      });
+    })
+  </script>
+</body>
+</html>
